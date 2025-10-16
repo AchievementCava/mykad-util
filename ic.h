@@ -14,6 +14,8 @@ struct StateInfo {
     std::string region;
 };
 
+const std::string toString(Sex sex);
+
 const std::map<int, StateInfo> stateCodeMap = {
     // Malaysian states (including alternate and extended codes)
     // 00 is unused/undefined
@@ -207,8 +209,6 @@ public:
     // Setters (optional, only if you want to allow modification)
     void setName(const std::string& name);
     void setAddress(const std::string& address);
-
-    // std::string dump();
 
 private:
     // Store as a fixed-size char array for efficiency and easy serialization

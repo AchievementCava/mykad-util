@@ -7,6 +7,20 @@
 #define FORMATTED_OFFSET 14
 #define RAW_OFFSET 12
 
+// Method toString for enum Sex
+const std::string toString(Sex sex) {
+    switch (sex) {
+        case Sex::Male:
+            return "Male";
+
+        case Sex::Female:
+            return "Female";
+
+        default:
+            return "No sex specified";
+    }
+}
+
 // Getters
 const std::string IC::getFormattedNumber() const {
     std::string rV = (this->formatted_number).data();
@@ -129,8 +143,6 @@ bool numberIsValid(std::array<char, 13> raw_number) {
 
     return true; // Placeholder
 }
-
-// TODO add dump()
 
 // Constructor implementations
 IC::IC() {
