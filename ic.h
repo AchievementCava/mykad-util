@@ -14,6 +14,12 @@ struct StateInfo {
     std::string region;
 };
 
+struct date {
+    int year;
+    int month;
+    int day;
+};
+
 const std::string toString(Sex sex);
 
 const std::map<int, StateInfo> stateCodeMap = {
@@ -201,7 +207,8 @@ public:
     StateInfo getState() const;
     std::string getName() const;
     std::string getAddress() const;
-    std::chrono::system_clock::time_point getDob() const;
+    std::chrono::system_clock::time_point getDobUnixTime() const;
+    const date& getDob() const;
     bool isValid() const;
 
     std::string getNote() const;
@@ -220,7 +227,8 @@ private:
     std::string name;
     std::string address;
 
-    std::chrono::system_clock::time_point dob; // Date of Birth as Unix time (time_point)
+    std::chrono::system_clock::time_point unix_time_dob; // Date of Birth as Unix time (time_point)
+    date dob; // Date of birth as struct date
 
     bool validity = false;         // Flag for validation status
 
