@@ -38,20 +38,18 @@ int main() {
 
         // Deny GET requests
         if (request.method == crow::HTTPMethod::Get) {
-            crow::json::wvalue info;
-            info["message"] = "MyKad Parser by AchievementCava. \n\
+            return crow::response(405, "MyKad Parser by AchievementCava. \n\n\
 Please POST to this endpoint and supply an IC number in \
 the form yymmdd-SS-#### via a request field, ic_number. \n\
 GET is not supported and will not be. \
-Goodbye!";
-            return crow::response(info);
+Goodbye!");
         }
         
         crow::json::rvalue body = crow::json::load(request.body);
 
         // Error message if no IC number supplied in POST
         if (!body || !body.has("ic_number")) {
-            return crow::response(400, "MyKad Parser by AchievementCava. \n\
+            return crow::response(400, "MyKad Parser by AchievementCava. \n\n\
 Please POST to this endpoint and supply an IC number in \
 the form yymmdd-SS-#### via a request field, ic_number. \n\
 Goodbye!");
