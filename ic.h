@@ -6,7 +6,8 @@
 
 enum class Sex {
     Male,
-    Female
+    Female,
+    None
 };
 
 struct StateInfo {
@@ -15,9 +16,9 @@ struct StateInfo {
 };
 
 struct date {
-    int year;
-    int month;
-    int day;
+    int year{0};
+    int month{0};
+    int day{0};
 };
 
 const std::string toString(Sex sex);

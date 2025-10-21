@@ -1,6 +1,6 @@
 # Compiler
 CXX = clang++
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++20 -I/opt/homebrew/include -lpthread
+CXXFLAGS = -Wall -Wextra -pedantic -std=c++20 -I/opt/homebrew/include
 
 # Files
 SRC = ic_util.cpp ic.cpp 

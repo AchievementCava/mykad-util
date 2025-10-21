@@ -178,6 +178,14 @@ IC::IC() {
 
 IC::IC(const std::string& ic_number) { // Provide IC_number as raw_number
 
+    // this->dob.day=0;
+    // this->dob.month=0;
+    // this->dob.year=0;
+    this->sex=Sex::None;
+    this->formatted_number[0] = '\0';
+    this->raw_number[0] = '\0';
+
+
     // Validate length
     if (!validIClength(ic_number)) {
         this->validity = false;
